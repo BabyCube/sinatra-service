@@ -28,7 +28,7 @@ function redirect() {
 <form id="create_user" action="http://<%= ENV['API_HOST'] %>:<%= ENV['API_PORT'] %>/users" method="post">
         <div>
             <label for="createUSR">Input user number to create:</label>
-            <input type="text" id="createUSR" name="n" />
+            <input type="text" id="createUSR" name="n" value="1"/>
             <input onclick="redirect()" type="submit" value="CREATE" />
         </div>
 </form>
