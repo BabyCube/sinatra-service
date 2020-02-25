@@ -9,7 +9,7 @@ set :api_port, ENV['API_PORT'] || 80
 
 # Show a pretty table of all users... rendered on a html page.
 get '/' do
-	uri = URI("http://127.0.0.1:4568/users")
+	uri = URI("http://#{ENV['API_HOST']}:#{ENV['API_PORT']}/users")
 	@users = Net::HTTP.get(uri)
 	@users = JSON.parse(@users)
 	@results_num = @users.length()

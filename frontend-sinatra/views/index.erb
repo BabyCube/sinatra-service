@@ -25,7 +25,7 @@ function redirect() {
 <h2>Users Table</h2>
 <h4>There are <%= @results_num %> results </h4>
 
-<form id="create_user" action="http://127.0.0.1:4568/users" method="post">
+<form id="create_user" action="http://<%= ENV['API_HOST'] %>:<%= ENV['API_PORT'] %>/users" method="post">
         <div>
             <label for="createUSR">Input user number to create:</label>
             <input type="text" id="createUSR" name="n" />
@@ -33,7 +33,7 @@ function redirect() {
         </div>
 </form>
 
-<form action="http://127.0.0.1:4568/users/destroy" method="post">
+<form action="http://<%= ENV['API_HOST'] %>:<%= ENV['API_PORT'] %>/users/destroy" method="post">
 	<input type="submit" value="Delete all users" />
 </form>	
 
