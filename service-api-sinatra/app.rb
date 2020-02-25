@@ -22,12 +22,12 @@ post '/users' do
   	count -= 1
   end
   # default code 200 returned
-  redirect 'http://0.0.0.0:4567'
+  redirect 'http://64.225.28.210' #IP for front-end
 end
 
 # Delete all users.
 post '/users/destroy' do
   User.destroy_all
   status 200
-  redirect 'http://0.0.0.0:4567'
+  redirect 'http://64.225.28.210'
 end
