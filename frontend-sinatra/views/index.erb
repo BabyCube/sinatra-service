@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+<script>
+function redirect() {
+  document.location.href="/"
+}
+</script>
+</head>
+<body>
+
+<h2>Users Table</h2>
+<h4>There are <%= @results_num %> results </h4>
+
+<form id="create_user" action="http://127.0.0.1:4568/users" method="post">
+        <div>
+            <label for="createUSR">Input user number to create:</label>
+            <input type="text" id="createUSR" name="n" />
+            <input onclick="redirect()" type="submit" value="CREATE" />
+        </div>
+</form>
+
+<form action="http://127.0.0.1:4568/users/destroy" method="post">
+	<input type="submit" value="Delete all users" />
+</form>	
+
+<a href="/">Refresh</a>
+
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Bio</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+			<th><%= user["name"] %></th>
+			<th><%= user["email"] %></th>
+			<th><%= user["bio"] %></th>
+	</tr>
+	<% end %>
+</table>
+
+</body>
+</html>
+</body>
