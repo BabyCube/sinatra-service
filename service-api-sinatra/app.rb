@@ -14,6 +14,7 @@ end
 post '/users' do
   count = params[:n].to_i || 1
   if count > 30
+    redirect 'http://64.225.28.210/error'
   	halt 400
   end
   while count > 0
