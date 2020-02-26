@@ -15,3 +15,7 @@ get '/' do
 	@results_num = @users.length()
   erb :index
 end
+
+get '/error' do
+	erb :error
+end
